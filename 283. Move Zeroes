@@ -1,0 +1,20 @@
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        i=0
+        s=len(nums)
+        if len(nums)==1:
+            return
+        while i < s:
+            if nums[i] == 0:
+                nums.pop(i)
+                nums.append(0)
+                s-=1
+            else:
+                i+=1
+        
+        
+Runtime: 44 ms, faster than 93.18% of Python3 online submissions for Move Zeroes.
+Memory Usage: 15.3 MB, less than 64.49% of Python3 online submissions for Move Zeroes.
