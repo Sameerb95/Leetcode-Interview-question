@@ -1,0 +1,9 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        c = Counter(nums)
+        if c.most_common()[0][1] > int(len(nums)/2):
+            return c.most_common()[0][0]
+            
+            
+Runtime: 164 ms, faster than 75.29% of Python3 online submissions for Majority Element.
+Memory Usage: 15.6 MB, less than 52.25% of Python3 online submissions for Majority Element.
