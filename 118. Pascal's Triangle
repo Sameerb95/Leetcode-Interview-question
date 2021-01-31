@@ -1,0 +1,24 @@
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        li = []
+        if numRows == 0:
+            return li
+        elif numRows==1:
+            return [[1]]
+        elif numRows >= 2:
+            li.extend([[1],[1,1]])
+            numRows = numRows-2
+            while numRows > 0:
+                new= []
+                for i in range(len(li[-1])+1):
+                    if i == 0:
+                        new.append(li[-1][i])
+                    elif i == len(li[-1]):
+                        new.append(li[-1][-1])
+                    else:
+                        new.append(li[-1][i-1] + li[-1][i])
+                numRows-=1
+                li.append(new)
+                
+Runtime: 28 ms, faster than 84.86% of Python3 online submissions for Pascal's Triangle.
+Memory Usage: 14.3 MB, less than 60.38% of Python3 online submissions for Pascal's Triangle.
