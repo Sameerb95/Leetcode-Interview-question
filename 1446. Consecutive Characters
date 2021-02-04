@@ -1,0 +1,17 @@
+class Solution:
+    def maxPower(self, s: str) -> int:
+        d=0
+        i=0
+        t=0
+        a=None
+        for i in range(len(s)):  
+            if s[i] == a:
+                t+=1
+            else:
+                a=s[i]
+                t=1
+            d = max(d,t)
+        return(d)
+        
+Runtime: 40 ms, faster than 82.04% of Python3 online submissions for Consecutive Characters.
+Memory Usage: 14.3 MB, less than 15.45% of Python3 online submissions for Consecutive Characters.
