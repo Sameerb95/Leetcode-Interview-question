@@ -1,0 +1,18 @@
+ def sortString(self, s: str) -> str:
+        c = Counter(s)
+        x = sorted(list(c.keys())) 
+        a = []
+        i = 0
+        while i < len(x):  
+            if x[i] in c:
+                if c[x[i]] !=0:
+                    c[x[i]] -=1
+                    a.append(x[i])
+            if sum(list(c.values()))==0:
+                    return "".join(a)
+            if i == len(x)-1:
+                i=0
+                x = x[::-1]
+                continue
+            else:
+                i+=1
