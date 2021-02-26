@@ -1,0 +1,19 @@
+class Solution:
+    def halvesAreAlike(self, s: str) -> bool:
+        i=0
+        j = len(s)//2
+        voweli = 0
+        vowelj = 0
+        while i < len(s)//2 and j < len(s):
+            if s[i].lower() in ['a','e','i','o','u']:
+                voweli+=1
+            if s[j].lower() in ['a','e','i','o','u']:
+                vowelj+=1
+
+            i+=1
+            j+=1
+            
+        return voweli == vowelj
+        
+Runtime: 36 ms, faster than 65.55% of Python3 online submissions for Determine if String Halves Are Alike.
+Memory Usage: 14.3 MB, less than 68.01% of Python3 online submissions for Determine if String Halves Are Alike.
