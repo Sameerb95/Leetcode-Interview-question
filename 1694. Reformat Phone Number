@@ -1,0 +1,28 @@
+class Solution:
+    def reformatNumber(self, number: str) -> str:
+        s= ''
+        number = number.replace('-','')
+        number = number.replace(' ','')
+        i=0
+        while i < len(number):
+            if len(number) - i > 4:
+                s+= number[i:i+3] + '-'
+                i+=3
+                continue
+            elif len(number) - i  == 4:
+                s+=number[i:i+2] + '-'
+                i+=2
+                continue
+            elif len(number)-i == 3:
+                s+=number[i:i+3] 
+                i+=3
+                continue
+            elif len(number)-i == 2:
+                s+=number[i:i+2]
+                i+=2
+        return s
+        
+        
+        
+Runtime: 32 ms, faster than 66.88% of Python3 online submissions for Reformat Phone Number.
+Memory Usage: 14.3 MB, less than 25.01% of Python3 online submissions for Reformat Phone Number.
